@@ -85,7 +85,10 @@ with st.form("my_form"):
 		##saving logics
 		if (regNo >= (rejVotes + desValues+ valid +rejOb )) & (valid == (hon_Farah+kheyrow+a_Issack)):
 			writer = pd.ExcelWriter("dday.xlsx", engine='xlsxwriter')
-			data ={
+			result.to_excel(writer,sheet_name = 'general', index=False)
+			writer.save()
+			writer.close()
+            data ={
 				'time': time.ctime(),
 				'ward':ward_select,
 				'pollingStation':poling_select,
@@ -100,10 +103,6 @@ with st.form("my_form"):
 				}
 			firebase_submission = db.child('Official').child(poling_select).set(data)
 			print(firebase_submission)
-
-			result.to_excel(writer,sheet_name = 'general', index=False)
-			writer.save()
-			writer.close()
 		else:
 			html(my_html) 
 

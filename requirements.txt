@@ -4,3 +4,4 @@ openpyxl
 numpy
 pyrebase4
 XlsxWriter
+requests
