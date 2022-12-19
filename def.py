@@ -5,6 +5,7 @@ import numpy as np
 from streamlit.components.v1 import html
 import pyrebase
 import time
+import xlsxwriter
 
 firebaseConfig = {
   "apiKey": "AIzaSyCqMdmrITPM8x4PdMqP5T9Hcmmj5IJPH6M",
