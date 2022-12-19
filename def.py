@@ -74,21 +74,7 @@ with st.form("my_form"):
 		frames = [df, df2]
 		result = pd.concat(frames)
 
-		data ={
-		'time': time.ctime(),
-		'ward':ward_select,
-		'pollingStation':poling_select,
-		'registeredVoters':regNo,
-		'rejected':rejVotes,
-		'rejectedObj':rejOb,
-		'disputed':desValues,
-		'valid':valid,
-		'jofle':kheyrow,
-		'dekow':a_Issack,
-		'osman':hon_Farah
-		}
-		firebase_submission = db.child('Official').child(poling_select).set(data)
-		print(firebase_submission)
+		
 		myerror ="""
 		
 			alert('Error Occured!');
